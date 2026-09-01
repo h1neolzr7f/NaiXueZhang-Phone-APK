@@ -1,38 +1,33 @@
-# Nai学长工作室 手机独立版 1.5.2-phone.23
+# Nai 学长工作室 Android APK
 
-装在手机上就能搜图、收藏、换角、出图。不连电脑。非官方。
+这个仓库只维护安装包的分发说明和校验信息。公开源码在 [NaiXueZhang-Phone](https://github.com/h1neolzr7f/NaiXueZhang-Phone)，Windows 版在 [NaiXueZhang-Studio-Upgrade](https://github.com/h1neolzr7f/NaiXueZhang-Studio-Upgrade)。
 
-## 下载
+## 当前安装包
 
-点这条就能下（不用登录 GitHub，约 72 小时有效）：
+| 项目 | 值 |
+|---|---|
+| 版本 | `1.5.2-phone.23` |
+| versionCode | `174` |
+| 包名 | `com.naixuezhang.studio.mobile` |
+| ABI | `arm64-v8a`（仅 64 位 Android） |
+| 文件大小 | `52,819,220` bytes |
+| SHA-256 | `213ddd93005a70284c05d3e978734d13cd086d492d6f3fa6ae9ed2f5b19e9095` |
+| 签名 | debug |
 
-https://litter.catbox.moe/mukoxq.apk
+[临时下载镜像](https://litter.catbox.moe/mukoxq.apk)可能在约 72 小时后失效。下载后务必核对 SHA-256；无法核对或校验不一致时不要安装。
 
-- 版本：**1.5.2-phone.23**（versionCode 174）
-- 大小：约 51MB
-- 只支持 64 位 Android
-- SHA256：`213ddd93005a70284c05d3e978734d13cd086d492d6f3fa6ae9ed2f5b19e9095`
-- debug 签名，先卸旧版再装
+PowerShell：
 
-装法：手机浏览器打开上面链接，下完允许「安装未知应用」。
+```powershell
+Get-FileHash .\NaiXueZhang-Phone-1.5.2.apk -Algorithm SHA256
+```
 
-## 这版
+由于当前包使用 debug 签名，从不同签名的旧版升级通常会失败，需要先导出自己的数据并卸载旧版。安装未知来源 APK 会扩大设备风险面，只应在理解来源和权限的设备上操作。
 
-- **换角页能选模型和参数。** 跟电脑工作台一样：V4.5/V4/V3、尺寸、步数、CFG、采样器、免费档。默认跟随原图。
-- 本地库真正写进手机。本地搜和在线搜分开，断网也能打开、改名、删除。
-- 在线库打不开，**不会再把你锁进内置样例**。
-- 打开更快。
-- 接口被拦：点「网页打开在线库」在官网里搜、收藏；也可粘贴 `https://aitag.win/i/作品号`。
-- 设置里可选自动 / 官网 / 自己的 https 镜像。
+## 源码与二进制关系
 
-## 官网现状
+公开源码默认分支目前是 phone.16，分发 APK 是 phone.23，因此还不是可复现的一一对应关系。不要把“源码可见”写成“当前 APK 已由该提交可复现构建”。后续发布应改用 GitHub Release 固定资产，并在 Release 说明中同时记录源码 commit、签名和 SHA-256。
 
-`aitag.win` 今天仍可能要过 Cloudflare 人机，图床 `ai-img.10118899.xyz` 可能是 521。这不是安装包坏了。先用网页库或已经收藏的本地库。
+应用需要使用者自行提供第三方服务凭据。Token 和 API Key 只应在应用设置里填写，不要发到 Issue、日志或截图中。
 
-## 小白三步
-
-1. 设置里填 NovelAI Token 和 DeepSeek Key。
-2. 发现里搜图，点☆入本地库。
-3. 本地库选人、看画风，需要时改模型和参数，点「整系列换角并入队」。
-
-源码说明：[NaiXueZhang-Phone](https://github.com/h1neolzr7f/NaiXueZhang-Phone) · 电脑版：[NaiXueZhang-Studio-Upgrade](https://github.com/h1neolzr7f/NaiXueZhang-Studio-Upgrade)
+这是非官方项目，与 pixiv Inc.、NovelAI/Anlatan、AITag、DeepSeek 或其他第三方服务没有隶属、授权或合作关系。
